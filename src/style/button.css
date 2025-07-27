@@ -1,0 +1,7 @@
+.todo-button{
+   border: 1px solid green;
+   height: 40px;
+   color: red;
+   background-color: wheat;
+   cursor: pointer;
+}

@@ -1,0 +1,39 @@
+
+.todo-input input {
+  padding: 10px;
+  width: 300px;
+}
+.todo-list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.todo-item{
+  display:block
+}
+.todo-detail{
+  display: flex;
+  justify-content: space-between;
+  width: 400px
+}
+.todo-text{
+  text-decoration: none;
+  margin: 30px;
+}
+.todo-text-finish{
+  text-decoration: line-through;
+    margin: 30px;
+  
+}
+.todo-contain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px
+}
+.todo-contain p{
+  cursor: pointer;
+  font-weight: bolder;
+  color: red;
+
+}
