@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import type { DataCreateAuthor } from "../type/authors.types";
 import AuthorInputCommons from "../../AuthorInputCommons";
 import { authorApi } from "../../../api/AuthorAPI";
+import array from "../type/arrayLabel";
 
 type Props = {
+  idEditAuthor?: number | null;
   setIsCreateAuthor: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
@@ -15,24 +17,7 @@ const FormCreateAuthor = ({ setIsCreateAuthor }: Props) => {
     avatar: "",
   });
 
-  const array: { label: string; nameValue: keyof DataCreateAuthor }[] = [
-    {
-      label: "Name",
-      nameValue: "name",
-    },
-    {
-      label: "Email",
-      nameValue: "email",
-    },
-    {
-      label: "Bio",
-      nameValue: "bio",
-    },
-    {
-      label: "Avatar",
-      nameValue: "avatar",
-    },
-  ];
+
   const handleGetValueInput = (value: string, key: keyof DataCreateAuthor) => {
     setData((prev) => ({ ...prev, [key]: value }));
   };
@@ -46,6 +31,7 @@ const FormCreateAuthor = ({ setIsCreateAuthor }: Props) => {
   return (
     <div>
       <h1>Form Create Author</h1>
+
       <div>
         {array.map((item) => {
           return (
