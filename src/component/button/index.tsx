@@ -1,4 +1,5 @@
 
+import type { memo } from "react";
 import "../../style/button.css"
 
 

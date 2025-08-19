@@ -6,11 +6,11 @@ import { AuthorProvider } from "./context/authorContext";
 function App() {
   return (
     <>
-      {/* <TodoList/> */}
-      <AuthorProvider>
+      <TodoList/>
+      {/* <AuthorProvider>
         {" "}
         <AuthorPage />
-      </AuthorProvider>
+      </AuthorProvider> */}
     </>
   );
 }

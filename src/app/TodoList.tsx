@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useMemo, useReducer, useState } from "react";
 import { InputCommons } from "../component/input";
 import ButtonCommon from "../component/button";
 import "../style/input.css";
@@ -11,14 +11,14 @@ import {
 const TodoList = () => {
   const [state, dispatch] = useReducer(reducer, initialValue);
 
-  const handleSubmit = () => {
+  const handleSubmit = useMemo(() => {
     const newTodo = {
       id: Date.now(),
       todoName: state.todoValue,
       completed: false,
     };
     dispatch({ type: "ADD_TODO", payload: newTodo });
-  };
+  }, [state]);
 
   return (
     <div>
@@ -37,7 +37,7 @@ const TodoList = () => {
         <ButtonCommon text="submit" handleSubmit={handleSubmit} />
       </div>
       <div className="todo-list">
-        {state.listTodo.map((item:Todo) => (
+        {state.listTodo.map((item: Todo) => (
           <li className="todo-item" key={item.id}>
             <div className="todo-detail">
               <input

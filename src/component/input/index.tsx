@@ -1,12 +1,11 @@
-import React, { useReducer } from "react";
-import { initialValue, reducer } from "../../reducer/TodolistReducer/TodolistReducer";
+import React, { memo } from "react";
 type InputCommonsProps = {
   placeHolder?: string,
   inputValue:string,
  handleGetValue:(e:React.ChangeEvent<HTMLInputElement>) =>void
 };
 
-export const InputCommons:React.FC<InputCommonsProps> = ({ placeHolder,inputValue,handleGetValue  }: Props) => {
+const InputCommons:React.FC<InputCommonsProps> = ({ placeHolder,inputValue,handleGetValue  }: Props) => {
   return (
     <div className="todo-input">
       <input
@@ -17,3 +16,5 @@ export const InputCommons:React.FC<InputCommonsProps> = ({ placeHolder,inputValu
     </div>
   );
 };
+
+export default memo(InputCommons)

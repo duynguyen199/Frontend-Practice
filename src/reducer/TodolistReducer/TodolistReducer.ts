@@ -7,7 +7,7 @@ export const initialValue = {
   listTodo: [{ id: 1, todoName: "Learn ReactJS", completed: false }],
 };
 
-export const reducer = (state, action: any) => {
+export const reducer = (state:any, action: any) => {
   switch (action.type) {
     case "SET_VALUE":
       return { ...state, todoValue: action.payload };
